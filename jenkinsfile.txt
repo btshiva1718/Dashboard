@@ -1,0 +1,71 @@
+Jenkins File
+
+Build ＞ Deploy ＞ Test ＞ Release
+Jenkinsfile: Pipeline as a code
+
+Step 1 : Start Jenkins
+Step 2 : Install Pipeline Plugin
+Step 3 : Create a new job
+Step 4 : Create or get Jenkinsfile in Pipeline section
+Step 5 : Run and check the output
+
+https://www.youtube.com/watch?v=RsD2nzPY0is&list=PLhW3qG5bs-L_ZCOA4zNPSoGbnVQ-rp_dG&index=21
+
+How to get Jenkinsfile from GIT SCM
+
+Step 1 : Create a new job or use existing job (type : Pipeline)
+Step 2 : Create a repository or GitHub
+Step 3 : Add Jenkinsfile in the repo
+Step 4 : Under Jenkins job ＞ Pipeline section ＞ Select Definition Pipeline script from SCM
+Step 5 : Add repo and jenkinsfile location in the job under Pipeline section
+Step 6 : Save & Run.
+
+https://www.youtube.com/watch?v=8IWH1cYVZt4&list=PLhW3qG5bs-L_ZCOA4zNPSoGbnVQ-rp_dG&index=22
+
+How to clone git repo from jenkinsfile
+
+Step 1 : Create a new job or use existing job (type : Pipeline)
+Step 2 : Create a repository on GitHub/BitBucket
+Step 3 : Under Jenkins job ＞ Pipeline section ＞ Definition ＞ Pipeline script 
+Step 4 : From dropdown select a sample HelloWorld examples
+Step 5 : Click Pipeline syntax ＞ Sample Step ＞ git: Git 
+Step 6 : Provide repository url, branch, credentials ＞ Generate Pipeline Script
+Step 7 : Copy the generated script and add in the Hello World pipeline script as a new stage
+Step 8 : Save & Run
+
+https://www.youtube.com/watch?v=r5nfUWVlGH4&list=PLhW3qG5bs-L_ZCOA4zNPSoGbnVQ-rp_dG&index=23
+
+
+Pipeline Script for jenkinsfile:
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('build') {
+            steps {
+                echo 'build'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'deploy'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'test'
+            }
+        }
+        stage('release') {
+            steps {
+                echo 'release'
+            }
+        }
+    }
+}
