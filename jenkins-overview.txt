@@ -1,0 +1,64 @@
+EMAIL NOTIFICATION
+
+Manage Jenkins - Configure System - Email Notifications
+SMTP Server: smtp.gmail.com
+Click on advanced 
+use SMTP authentication
+username:
+password:
+
+use SSL:
+SMTP PORT:465
+Charset: UTF-8
+
+Test configuration by sending test
+email test email-receipent
+then click on test configuration
+
+Scripted pipeline:
+
+node {
+    stage('build'){
+        echo 'building'
+}
+stage('test'){
+    echo 'testing'
+}
+stage('deploy'){
+    echo 'depoly'
+}
+}
+
+Declarative pipeline:
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+
+How to create a job in jenkins:
+ click on new item
+enter item name
+choose freestyle project
+then click ok
+click on execute shell command
+enter NAME=SHIVA
+echo $NAME
+then apply and save.
+
+similarly create 3 jobs like sample build, sample deploy, sample test
+for chaining of jobs like upstream and downstream.
+
+How to integrate jenkins with github:
+
+first one simple java program then push that program into github
+in git hub we need to copy the code of git repo
+and paste it in the jenkins.
+
